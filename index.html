@@ -4,49 +4,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pozytywny Cytat</title>
+  <title>Jesteś Cudowna!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f0f8ff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ff69b4);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      overflow: hidden;
     }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     #quote {
-      font-size: 2em;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 2px 2px 10px #ff69b4;
+      text-align: center;
       padding: 20px;
-      border: 2px solid #00bfff;
-      border-radius: 10px;
-      background-color: #ffffff;
-      max-width: 90%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 3px dashed #fff;
+      border-radius: 25px;
+      animation: pop 3s ease infinite;
     }
+
+    @keyframes pop {
+      0%, 100% {transform: scale(1);}
+      50% {transform: scale(1.05);}
+    }
+
+    .symbol {
+      position: absolute;
+      font-size: 4rem;
+      color: black;
+      opacity: 0.3;
+      animation: float 8s infinite;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(100vh);}
+      100% {transform: translateY(-200px);}
+    }
+
+    .s1 { left: 10%; animation-delay: 0s; }
+    .s2 { left: 40%; animation-delay: 3s; }
+    .s3 { left: 70%; animation-delay: 1.5s; }
   </style>
 </head>
 <body>
-  <div id="quote">Ładowanie cytatu...</div>
+  <div class="symbol s1">♥</div>
+  <div class="symbol s2">★</div>
+  <div class="symbol s3">❀</div>
+
+  <div id="quote">Ładowanie cukierkowego cytatu...</div>
 
   <script>
     const quotes = [
-      "Masz piękny uśmiech 😊",
-      "Jesteś ważna/y",
-      "Miłego dnia!",
-      "Uwierz w siebie!",
-      "Każdy dzień to nowa szansa.",
-      "Twoja obecność ma znaczenie.",
-      "Jesteś wyjątkowa/y.",
-      "Nigdy nie przestawaj marzyć.",
-      "Twoje działania mają znaczenie.",
-      "Uśmiechnij się – to zaraźliwe!",
-      "Wszystko będzie dobrze 💛",
-      "Zasługujesz na wszystko, co najlepsze",
-      "Nigdy nie jesteś sama/sam 🌈",
-      "Jesteś silna/y 💪",
-      "Masz w sobie moc zmieniania świata",
-      "Kochaj siebie – jesteś tego warta/y"
+      "Jesteś cukierkowo piękna! 🍭",
+      "Uśmiech Ci pasuje 💖",
+      "Błyszcz jak diament ✨",
+      "Masz w sobie magię 🌟",
+      "Róż to Twój kolor 💅",
+      "Świeć jak tęcza 🌈",
+      "Nie zapomnij, że jesteś wyjątkowa 💗",
+      "Cały świat się do Ciebie uśmiecha! 😍",
+      "Jesteś jak promyk słońca ☀️",
+      "Twoje dobre wibracje są zaraźliwe! 💃"
     ];
 
     function getRandomQuote() {
